@@ -1,3 +1,5 @@
+const menuList = ["About", "Services", "Pricing", "Contact"]
+
 const Menu = () => {
 
     return (
@@ -8,13 +10,28 @@ const Menu = () => {
                     <li>
                         <a
                             href="#"
-                            className="block rounded-sm bg-blue-700 px-3 py-2 text-white md:bg-transparent md:p-0 md:text-blue-700 dark:text-white md:dark:text-blue-500"
+                            className="block rounded-sm bg-blue-700 px-3 py-2 text-white md:bg-transparent md:p-0 md:text-blue-700
+                            dark:text-white md:dark:text-blue-500"
                             aria-current="page"
                         >
                             Home
                         </a>
                     </li>
-                    <li>
+                    {
+                        menuList.map((menu) => (
+                            <li key={menu}>
+                                <a
+                                    href="#"
+                                    className="block rounded-sm px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent
+                                     md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent
+                                      md:dark:hover:text-blue-500"
+                                >
+                                    {menu}
+                                </a>
+                            </li>
+                        ))
+                    }
+                    {/* <li>
                         <a
                             href="#"
                             className="block rounded-sm px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:hover:text-blue-500"
@@ -45,7 +62,7 @@ const Menu = () => {
                         >
                             Contact
                         </a>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
 
